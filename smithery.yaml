@@ -1,0 +1,37 @@
+# Smithery configuration file: https://smithery.ai/docs/config#smitheryyaml
+
+startCommand:
+  type: stdio
+  configSchema:
+    # JSON Schema defining the configuration options for the MCP.
+    type: object
+    required:
+      - apiKey
+    properties:
+      apiKey:
+        type: string
+        description: Google Gemini API key
+      saveToDesktop:
+        type: boolean
+        default: false
+        description: Save output to desktop instead of server directory
+      debug:
+        type: boolean
+        default: false
+        description: Enable debug logging
+  commandFunction:
+    # A JS function that produces the CLI command based on the given config to start the MCP on stdio.
+    |-
+    (config) => ({
+      command: 'node',
+      args: ['build/run.mjs', '--api-key', config.apiKey],
+      env: {
+        GEMINI_API_KEY: config.apiKey,
+        SAVE_TO_DESKTOP: String(config.saveToDesktop),
+        DEBUG: String(config.debug)
+      }
+    })
+  exampleConfig:
+    apiKey: YOUR_GEMINI_API_KEY
+    saveToDesktop: false
+    debug: false
