@@ -1,5 +1,7 @@
 # MCP Storybook Image Generator
 
+[![smithery badge](https://smithery.ai/badge/@falahgs/mcp-storybook-image-generator)](https://smithery.ai/server/@falahgs/mcp-storybook-image-generator)
+
 A professional-grade server that generates beautiful storybook images with matching children's stories using Google's Gemini AI.
 
 ## 🎬 Demo
@@ -30,6 +32,15 @@ A professional-grade server that generates beautiful storybook images with match
 
 ## ⚙️ Installation
 
+### Installing via Smithery
+
+To install mcp-storybook-image-generator for Claude Desktop automatically via [Smithery](https://smithery.ai/server/@falahgs/mcp-storybook-image-generator):
+
+```bash
+npx -y @smithery/cli install @falahgs/mcp-storybook-image-generator --client claude
+```
+
+### Manual Installation
 1. Install dependencies:
 ```bash
 npm install
